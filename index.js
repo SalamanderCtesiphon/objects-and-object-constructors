@@ -18,6 +18,11 @@ function addBookToLibrary() {
   return myLibrary;
 }
 
+function bookList() {
+  myLibrary.map(() => {
+  })
+}
+
 
 const hobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', true );
 
