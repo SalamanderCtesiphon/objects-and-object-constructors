@@ -1,3 +1,5 @@
+let myLibrary = [];
+
 function Book(title, author, numberOfPages, haveRead) {
   this.title = title;
   this.author = author;
@@ -8,6 +10,12 @@ function Book(title, author, numberOfPages, haveRead) {
     haveRead ? readStatus = "have read" : readStatus = "not read yet";
     return (`${title} by ${author}, ${numberOfPages} pages, ${readStatus}.`)
   }
+}
+
+function addBookToLibrary() {
+  const newBook = new Book();
+  myLibrary.push(newBook);
+  return myLibrary;
 }
 
 
