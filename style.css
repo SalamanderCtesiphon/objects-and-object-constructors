@@ -28,3 +28,14 @@ h1 {
 p {
   margin: 4vh;
 }
+
+.body {
+  display: flex;
+  margin: 1vw;
+  height: 50vh;
+  width: 100vw;
+}
+
+.book {
+  width: 15vw;
+}
