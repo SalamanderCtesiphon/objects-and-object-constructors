@@ -28,7 +28,7 @@ function addBookToLibrary() {
 }
 
 function bookList(myLibrary) {
- const message = myLibrary.map(() => {
+ const message = myLibrary.map((book) => {
     return this.info();
   });
 };
