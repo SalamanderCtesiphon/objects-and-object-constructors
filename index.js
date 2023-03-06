@@ -41,9 +41,9 @@ function bookForm() {
     <div class="form-line">
       <label for="haveRead">Have you read this title:</label>
       <div>
-        <input type="radio" id="yes" name="haveRead" value="true">
+        <input type="radio" id="haveRead" name="haveRead" value="true">
         <label for="yes">Yes</label>  
-        <input type="radio" id="no" name="haveRead" value="false">
+        <input type="radio" id="haveRead" name="haveRead" value="false">
         <label for="no">No</label>
       </div>
     </div> 
@@ -52,7 +52,21 @@ function bookForm() {
     </div>  
   `;
   inputField.appendChild(form);
-};
+  const submit = document.getElementById('submit');
+  submit.addEventListener('click', submitBook);
+}; 
+
+function submitBook(e) {
+  e.preventDefault();
+  clearBookList();
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  const numberOfPages = document.getElementById('numberOfPages').value;
+  const haveRead = document.getElementById('haveRead').value;
+  const book = new Book(title, author, numberOfPages, haveRead);
+  myLibrary.push(book);
+  bookList();
+}
 
 function bookList() {
   const body = document.querySelector('.body');
@@ -75,7 +89,15 @@ function bookList() {
   });
 };
 
+function clearBookList() {
+  const body = document.querySelector('.body');
+  const bookDiv = document.createElement('div');
+  bookDiv.innerHTML = ``;
+  body.appendChild(bookDiv);
+}
 
-bookList();
+
+clearBookList();
 bookForm();
+bookList();
 
