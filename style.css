@@ -49,3 +49,8 @@ p {
   display: flex;
   flex-direction: column;
 }
+
+.form-line {
+  display: flex;
+  justify-content: space-between;
+}
