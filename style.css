@@ -39,3 +39,13 @@ p {
 .book {
   width: 15vw;
 }
+
+.input-field {
+  width: 20vw;
+  height: 20vh;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+}

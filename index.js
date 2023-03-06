@@ -26,7 +26,25 @@ function bookForm() {
   const inputField = document.querySelector('.input-field');
   form.setAttribute('id', 'form');
   form.innerHTML = `
-    <lable for="title">Title:</lable>
+    <div>
+      <label for="title">Title: </label>
+      <input type="text" name="title" id="title>
+    </div>
+    <div>  
+      <label for="author">Author:</label>
+      <input type="text" name="author" id="author">
+    </div>
+    <div> 
+      <label for="numberOfPages">Number of Pages:</label>
+      <input type="text" name="numberOfPages" id="numberOfPages">
+    </div>
+    <div>
+      <label for="haveRead">Have you read this title?:</label>
+      <input type="radio" id="yes" name="haveRead" value="true">
+      <label for="yes">Yes</label>  
+      <input type="radio" id="no" name="haveRead" value="false">
+      <label for="no">No</label>
+    </div>   
   `;
   inputField.appendChild(form);
 };
