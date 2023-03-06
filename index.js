@@ -5,7 +5,7 @@ function Book(title, author, numberOfPages, haveRead) {
   this.author = author;
   this.numberOfPages = numberOfPages;
   this.haveRead = haveRead;
-}
+};
 
 const hobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', true );
 const neuromancer = new Book('Neuromancer', 'William Gibson', '271', true);
@@ -19,7 +19,17 @@ function addBookToLibrary() {
   const newBook = new Book();
   myLibrary.push(newBook);
   return myLibrary;
-}
+};
+
+function bookForm() {
+  const form = document.createElement('form');
+  const inputField = document.querySelector('.input-field');
+  form.setAttribute('id', 'form');
+  form.innerHTML = `
+    <lable for="title">Title:</lable>
+  `;
+  inputField.appendChild(form);
+};
 
 function bookList() {
   const body = document.querySelector('.body');
@@ -44,4 +54,5 @@ function bookList() {
 
 
 bookList();
+bookForm();
 
