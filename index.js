@@ -15,11 +15,10 @@ function Book(title, author, numberOfPages, haveRead) {
 const hobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', true );
 const neuromancer = new Book('Neuromancer', 'William Gibson', '271', true);
 const bladeRunner = new Book('Do Androids Dream of Electric Sheep', 'Philip K. Dick', '230', true);
+
 myLibrary.push(hobbit);
 myLibrary.push(neuromancer);
 myLibrary.push(bladeRunner);
-
-console.log(myLibrary);
 
 function addBookToLibrary() {
   const newBook = new Book();
@@ -27,16 +26,18 @@ function addBookToLibrary() {
   return myLibrary;
 }
 
-function bookList(myLibrary) {
- const message = myLibrary.map((book) => {
-    return this.info();
+function bookList() {
+  const body = document.querySelector('.body');
+  myLibrary.map((book) => {
+    const bookDiv = document.createElement('div');
+    bookDiv.classList.add('book');
+    bookDiv.innerHTML = `
+      <h1>${book.title}</h1>
+    `;
+    body.appendChild(bookDiv);
   });
 };
 
 
-
 bookList();
 
-
-const text = document.querySelector('.text');
-text.textContent = message;
