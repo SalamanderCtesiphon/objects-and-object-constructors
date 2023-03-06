@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: 'Fragment Mono', monospace;
 }
 
 .page{
@@ -21,6 +22,7 @@ h1 {
   justify-content: center;
   margin-bottom: 4vh;
   margin-top: 4vh;
+  font-size: 3rem;
 }
 
 p {
