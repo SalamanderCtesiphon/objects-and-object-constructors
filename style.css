@@ -41,13 +41,15 @@ p {
 }
 
 .input-field {
-  width: 20vw;
+  width: 25vw;
   height: 20vh;
 }
 
 #form {
   display: flex;
   flex-direction: column;
+  margin: 1vh;
+  padding: 1vh;
 }
 
 .form-line {

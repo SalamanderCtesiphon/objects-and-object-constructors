@@ -40,10 +40,12 @@ function bookForm() {
     </div>
     <div class="form-line">
       <label for="haveRead">Have you read this title:</label>
-      <input type="radio" id="yes" name="haveRead" value="true">
-      <label for="yes">Yes</label>  
-      <input type="radio" id="no" name="haveRead" value="false">
-      <label for="no">No</label>
+      <div>
+        <input type="radio" id="yes" name="haveRead" value="true">
+        <label for="yes">Yes</label>  
+        <input type="radio" id="no" name="haveRead" value="false">
+        <label for="no">No</label>
+      </div>
     </div> 
     <div>
       <input type="submit" value="Submit" id="submit">
