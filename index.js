@@ -7,9 +7,9 @@ function Book(title, author, numberOfPages, haveRead) {
   this.haveRead = haveRead;
 };
 
-const hobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', true );
-const neuromancer = new Book('Neuromancer', 'William Gibson', '271', true);
-const bladeRunner = new Book('Do Androids Dream of Electric Sheep', 'Philip K. Dick', '230', true);
+const hobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', 'true' );
+const neuromancer = new Book('Neuromancer', 'William Gibson', '271', 'true');
+const bladeRunner = new Book('Do Androids Dream of Electric Sheep', 'Philip K. Dick', '230', 'true');
 
 myLibrary.push(hobbit);
 myLibrary.push(neuromancer);
