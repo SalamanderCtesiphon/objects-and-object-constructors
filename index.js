@@ -96,6 +96,5 @@ function clearBookList() {
 
 
 clearBookList();
-bookForm();
 bookList();
 
