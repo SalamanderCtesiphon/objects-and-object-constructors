@@ -21,6 +21,7 @@ function addBookToLibrary() {
   return myLibrary;
 };
 
+
 const newBookButton = document.querySelector('#newBookButton');
 newBookButton.addEventListener('click', bookForm);
 
@@ -28,6 +29,7 @@ function bookForm() {
   const newBookButton = document.querySelector('#newBookButton');
   newBookButton.style.display = 'none';
   const form = document.createElement('form');
+  form.classList.add('form');
   const inputField = document.querySelector('.input-field');
   form.setAttribute('id', 'form');
   form.innerHTML = `
@@ -71,6 +73,9 @@ function submitBook(e) {
   const book = new Book(title, author, numberOfPages, haveRead);
   myLibrary.push(book);
   bookList();
+  clearForm();
+  const newBookButton = document.querySelector('#newBookButton');
+  newBookButton.style.display = 'block';
 }
 
 function bookList() {
@@ -97,6 +102,11 @@ function bookList() {
 function clearBookList() {
   const body = document.querySelector('.body');
   body.innerHTML = ``;
+}
+
+function clearForm() {
+  const form = document.querySelector('.form');
+  form.style.display = "none";
 }
 
 
