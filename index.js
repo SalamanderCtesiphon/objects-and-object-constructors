@@ -91,9 +91,7 @@ function bookList() {
 
 function clearBookList() {
   const body = document.querySelector('.body');
-  const bookDiv = document.createElement('div');
-  bookDiv.innerHTML = ``;
-  body.appendChild(bookDiv);
+  body.innerHTML = ``;
 }
 
 
