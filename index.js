@@ -71,6 +71,11 @@ function submitBook(e) {
   const numberOfPages = document.getElementById('numberOfPages').value;
   const haveRead = document.querySelector('input[name="haveRead"]:checked').value;
   const book = new Book(title, author, numberOfPages, haveRead);
+  if(title === '' || author === '' || numberOfPages === '') {
+    alert('Please fill out form completely.');
+    bookList();
+    return;
+  }
   myLibrary.push(book);
   bookList();
   clearForm();
