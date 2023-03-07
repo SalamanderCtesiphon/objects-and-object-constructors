@@ -46,9 +46,9 @@ function bookForm() {
     <div class="form-line">
       <label for="haveRead">Have you read this title:</label>
       <div>
-        <input type="radio" id="haveRead" name="haveRead" value="true">
+        <input type="radio" id="true" name="haveRead" value="true">
         <label for="yes">Yes</label>  
-        <input type="radio" id="haveRead" name="haveRead" value="false">
+        <input type="radio" id="false" name="haveRead" value="false">
         <label for="no">No</label>
       </div>
     </div> 
@@ -67,7 +67,7 @@ function submitBook(e) {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
   const numberOfPages = document.getElementById('numberOfPages').value;
-  const haveRead = document.getElementById('haveRead').value;
+  const haveRead = document.querySelector('input[name="haveRead"]:checked').value;
   const book = new Book(title, author, numberOfPages, haveRead);
   myLibrary.push(book);
   bookList();
@@ -77,7 +77,7 @@ function bookList() {
   const body = document.querySelector('.body');
   myLibrary.map((book) => {
     let readStatus = '';
-    if (book.haveRead === true) {
+    if (book.haveRead === 'true') {
       readStatus = "Have read." 
     } else {
       readStatus = "Have not read yet."
