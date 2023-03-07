@@ -50,7 +50,7 @@ function bookForm() {
       <div>
         <input type="radio" id="true" name="haveRead" value="true">
         <label for="yes">Yes</label>  
-        <input type="radio" id="false" name="haveRead" value="false">
+        <input type="radio" id="false" name="haveRead" value="false" checked="checked">
         <label for="no">No</label>
       </div>
     </div> 
@@ -70,6 +70,10 @@ function submitBook(e) {
   const author = document.getElementById('author').value;
   const numberOfPages = document.getElementById('numberOfPages').value;
   const haveRead = document.querySelector('input[name="haveRead"]:checked').value;
+  if (haveRead === null) {
+    alert('Please fill out form completely');
+    return
+  }
   const book = new Book(title, author, numberOfPages, haveRead);
   myLibrary.push(book);
   bookList();
