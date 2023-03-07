@@ -21,7 +21,12 @@ function addBookToLibrary() {
   return myLibrary;
 };
 
+const newBookButton = document.querySelector('#newBookButton');
+newBookButton.addEventListener('click', bookForm);
+
 function bookForm() {
+  const newBookButton = document.querySelector('#newBookButton');
+  newBookButton.style.display = 'none';
   const form = document.createElement('form');
   const inputField = document.querySelector('.input-field');
   form.setAttribute('id', 'form');
@@ -95,6 +100,5 @@ function clearBookList() {
 }
 
 
-clearBookList();
 bookList();
 
