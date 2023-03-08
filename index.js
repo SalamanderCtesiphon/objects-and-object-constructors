@@ -23,18 +23,14 @@ function addBookToLibrary() {
 
 
 
-const displayAddBookButton = true;
 
 function newBookButton() {
-  if (displayAddBookButton) {
-    const newBookButton = document.createElement('button');
-    newBookButton.setAttribute('id', 'NewBookButton');
-    const inputField = document.querySelector('.input-field');
-    newBookButton.textContent = 'Add a new book'
-    inputField.appendChild(newBookButton);
-    newBookButton.addEventListener('click', bookForm);
-  }
-
+  const newBookButton = document.createElement('button');
+  newBookButton.setAttribute('id', 'NewBookButton');
+  const inputField = document.querySelector('.input-field');
+  newBookButton.textContent = 'Add a new book'
+  inputField.appendChild(newBookButton);
+  newBookButton.addEventListener('click', bookForm);
 }
 
 newBookButton();
@@ -42,12 +38,12 @@ newBookButton();
 
 
 function bookForm() {
-  const newBookButton = document.querySelector('#newBookButton');
-  newBookButton.style.display = 'none';
   const form = document.createElement('form');
-  form.classList.add('form');
   const inputField = document.querySelector('.input-field');
+  const newBookButton = document.querySelector('#newBookButton');
+  form.classList.add('form');
   form.setAttribute('id', 'form');
+  inputField.removeChild(newBookButton);
   form.innerHTML = `
     <div class="form-line">
       <label for="title">Title: </label>
