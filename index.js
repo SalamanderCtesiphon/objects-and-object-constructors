@@ -22,8 +22,24 @@ function addBookToLibrary() {
 };
 
 
-const newBookButton = document.querySelector('#newBookButton');
-newBookButton.addEventListener('click', bookForm);
+
+const displayAddBookButton = true;
+
+function newBookButton() {
+  if (displayAddBookButton) {
+    const newBookButton = document.createElement('button');
+    newBookButton.setAttribute('id', 'NewBookButton');
+    const inputField = document.querySelector('.input-field');
+    newBookButton.textContent = 'Add a new book'
+    inputField.appendChild(newBookButton);
+    newBookButton.addEventListener('click', bookForm);
+  }
+
+}
+
+newBookButton();
+
+
 
 function bookForm() {
   const newBookButton = document.querySelector('#newBookButton');
