@@ -22,24 +22,29 @@ function addBookToLibrary() {
 };
 
 
-
+let addBookButtonVisible = true;
 
 function newBookButton() {
   const newBookButton = document.createElement('button');
   newBookButton.setAttribute('id', 'NewBookButton');
   const inputField = document.querySelector('.input-field');
   newBookButton.textContent = 'Add a new book'
-  inputField.appendChild(newBookButton);
-  newBookButton.addEventListener('click', bookForm);
+  if (addBookButtonVisible) {
+    inputField.appendChild(newBookButton);
+    newBookButton.addEventListener('click', bookForm);
+  } else {
+    newBookButton.remove();
+  }
 }
 
-newBookButton();
 
 
 
 function bookForm() {
   const form = document.createElement('form');
   const inputField = document.querySelector('.input-field');
+  const newBookButton = document.querySelector('.newBookButton');
+  console.log(newBookButton);
   form.classList.add('form');
   form.setAttribute('id', 'form');
   form.innerHTML = `
@@ -73,6 +78,9 @@ function bookForm() {
   submit.addEventListener('click', submitBook);
 }; 
 
+
+
+
 function submitBook(e) {
   e.preventDefault();
   clearBookList();
@@ -90,7 +98,7 @@ function submitBook(e) {
   bookList();
   clearForm();
   const newBookButton = document.querySelector('#newBookButton');
-  newBookButton.style.display = 'block';
+  submit.addEventListener('click', submitBook);
 }
 
 function bookList() {
@@ -124,6 +132,6 @@ function clearForm() {
   form.style.display = "none";
 }
 
-
+newBookButton();
 bookList();
 
