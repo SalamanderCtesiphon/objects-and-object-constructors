@@ -40,10 +40,8 @@ newBookButton();
 function bookForm() {
   const form = document.createElement('form');
   const inputField = document.querySelector('.input-field');
-  const newBookButton = document.querySelector('#newBookButton');
   form.classList.add('form');
   form.setAttribute('id', 'form');
-  const throwawaynode = inputField.removeChild(newBookButton);
   form.innerHTML = `
     <div class="form-line">
       <label for="title">Title: </label>
