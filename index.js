@@ -71,7 +71,7 @@ function bookList() {
       <p>Author: ${book.author}</p>
       <p>Length: ${book.numberOfPages} pgs.</p>
       <p>${readStatus}</p>
-      <button>Delete</button>
+      <button id="deleteBtn">Delete</button>
     `;
     body.appendChild(bookDiv);
   });
