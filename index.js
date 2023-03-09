@@ -28,7 +28,7 @@ const form = document.querySelector('.form');
 form.style.display = "none";
 
 function bookForm() {
-  const form = document.querySelector('form');
+  form.style.display = 'block';
   newBookButton.style.display = 'none';
   const inputField = document.querySelector('.input-field');
   form.classList.add('form');
