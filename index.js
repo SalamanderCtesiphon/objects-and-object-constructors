@@ -24,22 +24,15 @@ function addBookToLibrary() {
 
 const newBookButton = document.getElementById('newBookButton');
 newBookButton.addEventListener('click', bookForm);
+const form = document.querySelector('.form');
+form.style.display = "none";
 
 function bookForm() {
   const form = document.querySelector('form');
-  if (form === null) {
-    const form = document.createElement('form');
-  } else {
-    form.remove();
-    form = document.createElement('form');
-  }
   newBookButton.style.display = 'none';
   const inputField = document.querySelector('.input-field');
   form.classList.add('form');
   form.setAttribute('id', 'form');
-  form.innerHTML = `
-     
-  `;
   inputField.appendChild(form);
   const submit = document.getElementById('submit');
   submit.addEventListener('click', submitBook);
