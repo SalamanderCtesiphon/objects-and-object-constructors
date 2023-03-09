@@ -28,6 +28,7 @@ newBookButton.addEventListener('click', bookForm);
 function bookForm() {
   newBookButton.style.display = 'none';
   const form = document.createElement('form');
+  form.style.display = 'block';
   const inputField = document.querySelector('.input-field');
   form.classList.add('form');
   form.setAttribute('id', 'form');
