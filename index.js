@@ -82,6 +82,9 @@ function clearBookList() {
 }
 
 function clearForm() {
+  title.value = '';
+  author.value = '';
+  numberOfPages.value = '';
   const form = document.querySelector('.form');
   form.style.display = "none";
   const newBookButton = document.querySelector('#newBookButton');
