@@ -81,9 +81,6 @@ function submitBook(e) {
   myLibrary.push(book);
   bookList();
   clearForm();
-  const newBookButton = document.querySelector('#newBookButton');
-  newBookButton.style.display = 'block';
-  submit.addEventListener('click', submitBook);
 }
 
 function bookList() {
@@ -115,6 +112,9 @@ function clearBookList() {
 function clearForm() {
   const form = document.querySelector('.form');
   form.style.display = "none";
+  const newBookButton = document.querySelector('#newBookButton');
+  newBookButton.style.display = 'block';
+  submit.addEventListener('click', submitBook);
 }
 
 bookList();
