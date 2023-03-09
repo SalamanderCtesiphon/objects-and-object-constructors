@@ -71,11 +71,25 @@ function bookList() {
       <p>Author: ${book.author}</p>
       <p>Length: ${book.numberOfPages} pgs.</p>
       <p>${readStatus}</p>
-      <button id="deleteBtn">Delete</button>
+      <button class="remove">Delete</button>
     `;
     body.appendChild(bookDiv);
+    const removeBtn = document.querySelector('.remove');
+    removeBtn.addEventListener('click', removeBook);
   });
 };
+
+
+
+function removeBook(e) {
+  if (e.target.classList.contains('remove')) {
+    const book = e.target.parentElement;
+    const index = Array.from(book.parentElement.children).indexOf(book);
+    myLibrary.splice(index, 1);
+    clearBookList();
+    bookList();
+  }
+}
 
 function clearBookList() {
   const body = document.querySelector('.body');
