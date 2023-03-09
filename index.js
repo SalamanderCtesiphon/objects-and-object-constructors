@@ -1,12 +1,5 @@
 let myLibrary = [];
 
-function Book(title, author, numberOfPages, haveRead) {
-  this.title = title;
-  this.author = author;
-  this.numberOfPages = numberOfPages;
-  this.haveRead = haveRead;
-};
-
 const hobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', 'true' );
 const neuromancer = new Book('Neuromancer', 'William Gibson', '271', 'true');
 const bladeRunner = new Book('Do Androids Dream of Electric Sheep', 'Philip K. Dick', '230', 'true');
@@ -15,17 +8,23 @@ myLibrary.push(hobbit);
 myLibrary.push(neuromancer);
 myLibrary.push(bladeRunner);
 
+const newBookButton = document.getElementById('newBookButton');
+newBookButton.addEventListener('click', bookForm);
+const form = document.querySelector('.form');
+form.style.display = "none";
+
+function Book(title, author, numberOfPages, haveRead) {
+  this.title = title;
+  this.author = author;
+  this.numberOfPages = numberOfPages;
+  this.haveRead = haveRead;
+};
+
 function addBookToLibrary() {
   const newBook = new Book();
   myLibrary.push(newBook);
   return myLibrary;
 };
-
-
-const newBookButton = document.getElementById('newBookButton');
-newBookButton.addEventListener('click', bookForm);
-const form = document.querySelector('.form');
-form.style.display = "none";
 
 function bookForm() {
   form.style.display = 'block';
@@ -37,9 +36,6 @@ function bookForm() {
   const submit = document.getElementById('submit');
   submit.addEventListener('click', submitBook);
 }; 
-
-
-
 
 function submitBook(e) {
   e.preventDefault();
