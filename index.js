@@ -26,37 +26,19 @@ const newBookButton = document.getElementById('newBookButton');
 newBookButton.addEventListener('click', bookForm);
 
 function bookForm() {
+  const form = document.querySelector('form');
+  if (form === null) {
+    const form = document.createElement('form');
+  } else {
+    form.remove();
+    form = document.createElement('form');
+  }
   newBookButton.style.display = 'none';
-  const form = document.createElement('form');
-  form.style.display = 'block';
   const inputField = document.querySelector('.input-field');
   form.classList.add('form');
   form.setAttribute('id', 'form');
   form.innerHTML = `
-    <div class="form-line">
-      <label for="title">Title: </label>
-      <input type="text" name="title" id="title">
-    </div>
-    <div class="form-line">  
-      <label for="author">Author:</label>
-      <input type="text" name="author" id="author">
-    </div>
-    <div class="form-line"> 
-      <label for="numberOfPages">Number of Pages:</label>
-      <input type="text" name="numberOfPages" id="numberOfPages">
-    </div>
-    <div class="form-line">
-      <label for="haveRead">Have you read this title:</label>
-      <div>
-        <input type="radio" id="true" name="haveRead" value="true">
-        <label for="yes">Yes</label>  
-        <input type="radio" id="false" name="haveRead" value="false" checked="checked">
-        <label for="no">No</label>
-      </div>
-    </div> 
-    <div>
-      <input type="submit" value="Submit" id="submit">
-    </div>  
+     
   `;
   inputField.appendChild(form);
   const submit = document.getElementById('submit');
