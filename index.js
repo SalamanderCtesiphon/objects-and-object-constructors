@@ -1,8 +1,8 @@
 let myLibrary = [];
 
-const hobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', 'true' );
-const neuromancer = new Book('Neuromancer', 'William Gibson', '271', 'true');
-const bladeRunner = new Book('Do Androids Dream of Electric Sheep', 'Philip K. Dick', '230', 'true');
+const hobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', 'true', 1 );
+const neuromancer = new Book('Neuromancer', 'William Gibson', '271', 'true', 2);
+const bladeRunner = new Book('Do Androids Dream of Electric Sheep', 'Philip K. Dick', '230', 'true', 3);
 
 myLibrary.push(hobbit);
 myLibrary.push(neuromancer);
@@ -13,11 +13,12 @@ newBookButton.addEventListener('click', bookForm);
 const form = document.querySelector('.form');
 form.style.display = "none";
 
-function Book(title, author, numberOfPages, haveRead) {
+function Book(title, author, numberOfPages, haveRead, dataAttribute) {
   this.title = title;
   this.author = author;
   this.numberOfPages = numberOfPages;
   this.haveRead = haveRead;
+  this.dataAttribute = dataAttribute;
 };
 
 function addBookToLibrary() {
@@ -44,7 +45,9 @@ function submitBook(e) {
   const author = document.getElementById('author').value;
   const numberOfPages = document.getElementById('numberOfPages').value;
   const haveRead = document.querySelector('input[name="haveRead"]:checked').value;
-  const book = new Book(title, author, numberOfPages, haveRead);
+  const dataAttribute = myLibrary.length + 1;
+  console.log(dataAttribute);
+  const book = new Book(title, author, numberOfPages, haveRead, dataAttribute);
   if(title === '' || author === '' || numberOfPages === '') {
     alert('Please fill out form completely.');
     bookList();
