@@ -72,7 +72,7 @@ function bookList() {
     const bookAuthor = document.createElement('p');
     const bookLength = document.createElement('p');
     const deleteButton = document.createElement('button');
-    const readStatusDisplay = document.createElement('p');
+    const readStatusDisplay = document.createElement('button');
     bookDiv.classList.add('book');
     bookTitle.setAttribute('class', 'bookTitle');
     bookAuthor.setAttribute('class', 'bookAuthor');
@@ -91,6 +91,7 @@ function bookList() {
     bookDiv.appendChild(deleteButton)
     body.appendChild(bookDiv);
     deleteButton.addEventListener('click', deleteBook);
+    readStatusDisplay.addEventListener('click', changesStatus);
   });
 };
 
@@ -100,6 +101,10 @@ function deleteBook(e) {
   myLibrary.splice(index, 1);
   clearBookList();
   bookList();
+}
+
+function changesStatus(e) {
+  console.log('hi');
 }
 
 
