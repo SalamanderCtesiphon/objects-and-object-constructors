@@ -69,30 +69,26 @@ function bookList() {
     };
     const bookDiv = document.createElement('div');
     bookDiv.classList.add('book');
+    const targetItem = book.dataAttribute;
     bookDiv.innerHTML = `
       <h2>${book.title}</h2>
       <p>Author: ${book.author}</p>
       <p>Length: ${book.numberOfPages} pgs.</p>
       <p>${readStatus}</p>
-      <button class="remove">Delete</button>
+      <button id="targetItem">Delete</button>
+      <p>${book.dataAttribute}</p>
     `;
     body.appendChild(bookDiv);
-    const removeBtn = document.querySelector('.remove');
-    removeBtn.addEventListener('click', removeBook);
+    const deleteBtn = document.getElementById('targetItem');
+    deleteBtn.addEventListener('click', deleteBook);
   });
 };
 
-
-
-function removeBook(e) {
-  if (e.target.classList.contains('remove')) {
-    const book = e.target.parentElement;
-    const index = Array.from(book.parentElement.children).indexOf(book);
-    myLibrary.splice(index, 1);
-    clearBookList();
-    bookList();
-  }
+function deleteBook(book) {
+  console.log(targetItem);
 }
+
+
 
 function clearBookList() {
   const body = document.querySelector('.body');
