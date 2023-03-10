@@ -91,7 +91,6 @@ function bookList() {
     bookDiv.appendChild(deleteButton)
     body.appendChild(bookDiv);
     deleteButton.addEventListener('click', deleteBook);
-    readStatusDisplay.addEventListener('click', changesStatus);
   });
 };
 
@@ -102,11 +101,6 @@ function deleteBook(e) {
   clearBookList();
   bookList();
 }
-
-function changesStatus(e) {
-  console.log('hi');
-}
-
 
 
 function clearBookList() {
