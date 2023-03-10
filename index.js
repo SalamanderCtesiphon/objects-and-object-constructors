@@ -81,7 +81,7 @@ function bookList() {
     readStatusDisplay.setAttribute('class', 'readStatusDisplay');
     bookTitle.textContent = `${book.title}`;
     bookAuthor.textContent = `Author: ${book.author}`;
-    bookLength.textContent = `Length: ${book.numberOfPages}`;
+    bookLength.textContent = `Length: ${book.numberOfPages} pgs.`;
     readStatusDisplay.textContent = `${readStatus}`;
     deleteButton.textContent = 'Delete';
     bookDiv.appendChild(bookTitle);
