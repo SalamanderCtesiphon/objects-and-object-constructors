@@ -19,6 +19,11 @@ function Book(title, author, numberOfPages, haveRead, dataAttribute) {
   this.numberOfPages = numberOfPages;
   this.haveRead = haveRead;
   this.dataAttribute = dataAttribute;
+  this.toggleRead = function() {
+    haveRead = !haveRead;
+    clearBookList();
+    bookList(); 
+  }
 };
 
 function addBookToLibrary() {
@@ -46,7 +51,6 @@ function submitBook(e) {
   const numberOfPages = document.getElementById('numberOfPages').value;
   const haveRead = document.querySelector('input[name="haveRead"]:checked').value;
   const dataAttribute = myLibrary.length + 1;
-  console.log(dataAttribute);
   const book = new Book(title, author, numberOfPages, haveRead, dataAttribute);
   if(title === '' || author === '' || numberOfPages === '') {
     alert('Please fill out form completely.');
@@ -91,6 +95,7 @@ function bookList() {
     bookDiv.appendChild(deleteButton)
     body.appendChild(bookDiv);
     deleteButton.addEventListener('click', deleteBook);
+    readStatusDisplay.addEventListener('click', book.toggleRead);
   });
 };
 
