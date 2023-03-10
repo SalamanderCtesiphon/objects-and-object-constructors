@@ -20,11 +20,14 @@ function Book(title, author, numberOfPages, haveRead, dataAttribute) {
   this.haveRead = haveRead;
   this.dataAttribute = dataAttribute;
   this.toggleRead = function() {
+    console.log(haveRead);
     haveRead = !haveRead;
+    console.log(haveRead);
     clearBookList();
-    bookList(); 
+    bookList();
   }
 };
+
 
 function addBookToLibrary() {
   const newBook = new Book();
@@ -63,6 +66,7 @@ function submitBook(e) {
 }
 
 function bookList() {
+  console.log('fire');
   const body = document.querySelector('.body');
   myLibrary.map((book) => {
     let readStatus = '';
@@ -109,6 +113,7 @@ function deleteBook(e) {
 
 
 function clearBookList() {
+  console.log('fire2');
   const body = document.querySelector('.body');
   body.innerHTML = ``;
 }
