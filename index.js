@@ -69,19 +69,32 @@ function bookList() {
     };
     const bookDiv = document.createElement('div');
     bookDiv.classList.add('book');
-    bookDiv.innerHTML = `
-      <h2>${book.title}</h2>
+    const bookTitle = document.createElement('h3');
+    const bookAuthor = document.createElement('p');
+    const bookLength = document.createElement('p');
+    bookTitle.setAttribute('class', 'bookTitle');
+    bookAuthor.setAttribute('class', 'bookAuthor');
+    bookLength.setAttribute('class', 'bookLength');
+    bookTitle.textContent = `${book.title}`;
+    bookAuthor.textContent = `Author: ${book.author}`;
+    bookLength.textContent = `Length: ${book.numberOfPages}`;
+    bookDiv.appendChild(bookTitle);
+    bookDiv.appendChild(bookAuthor);
+    bookDiv.appendChild(bookLength);
+   /*  bookDiv.innerHTML = `
+
       <p>Author: ${book.author}</p>
       <p>Length: ${book.numberOfPages} pgs.</p>
       <p>${readStatus}</p>
-      <button id="">Delete</button>
+      <button onclick="() => console.log('hi')">Delete</button>
       <p>${book.dataAttribute}</p>
-    `;
+    `; */
     body.appendChild(bookDiv);
   });
 };
 
 function deleteBook() {
+  console.log('hi');
 }
 
 
