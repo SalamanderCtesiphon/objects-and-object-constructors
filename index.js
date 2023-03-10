@@ -69,23 +69,19 @@ function bookList() {
     };
     const bookDiv = document.createElement('div');
     bookDiv.classList.add('book');
-    const targetItem = book.dataAttribute;
     bookDiv.innerHTML = `
       <h2>${book.title}</h2>
       <p>Author: ${book.author}</p>
       <p>Length: ${book.numberOfPages} pgs.</p>
       <p>${readStatus}</p>
-      <button id="targetItem">Delete</button>
+      <button id="">Delete</button>
       <p>${book.dataAttribute}</p>
     `;
     body.appendChild(bookDiv);
-    const deleteBtn = document.getElementById('targetItem');
-    deleteBtn.addEventListener('click', deleteBook);
   });
 };
 
-function deleteBook(book) {
-  console.log(targetItem);
+function deleteBook() {
 }
 
 
