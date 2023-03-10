@@ -1,6 +1,6 @@
 let myLibrary = [];
 
-const hobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', 'true', 1 );
+const hobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', 'true', 1);
 const neuromancer = new Book('Neuromancer', 'William Gibson', '271', 'true', 2);
 const bladeRunner = new Book('Do Androids Dream of Electric Sheep', 'Philip K. Dick', '230', 'true', 3);
 
@@ -68,33 +68,38 @@ function bookList() {
       readStatus = "Have not read yet."
     };
     const bookDiv = document.createElement('div');
-    bookDiv.classList.add('book');
     const bookTitle = document.createElement('h3');
     const bookAuthor = document.createElement('p');
     const bookLength = document.createElement('p');
+    const deleteButton = document.createElement('button');
+    const readStatusDisplay = document.createElement('p');
+    bookDiv.classList.add('book');
     bookTitle.setAttribute('class', 'bookTitle');
     bookAuthor.setAttribute('class', 'bookAuthor');
     bookLength.setAttribute('class', 'bookLength');
+    deleteButton.setAttribute('class', 'deleteButton');
+    readStatusDisplay.setAttribute('class', 'readStatusDisplay');
     bookTitle.textContent = `${book.title}`;
     bookAuthor.textContent = `Author: ${book.author}`;
     bookLength.textContent = `Length: ${book.numberOfPages}`;
+    readStatusDisplay.textContent = `${readStatus}`;
+    deleteButton.textContent = 'Delete';
     bookDiv.appendChild(bookTitle);
     bookDiv.appendChild(bookAuthor);
     bookDiv.appendChild(bookLength);
-   /*  bookDiv.innerHTML = `
-
-      <p>Author: ${book.author}</p>
-      <p>Length: ${book.numberOfPages} pgs.</p>
-      <p>${readStatus}</p>
-      <button onclick="() => console.log('hi')">Delete</button>
-      <p>${book.dataAttribute}</p>
-    `; */
+    bookDiv.appendChild(readStatusDisplay);
+    bookDiv.appendChild(deleteButton)
     body.appendChild(bookDiv);
+    deleteButton.addEventListener('click', deleteBook);
   });
 };
 
-function deleteBook() {
-  console.log('hi');
+function deleteBook(e) {
+  const book = e.target.parentElement;
+  const index = Array.from(book.parentElement.children).indexOf(book);
+  myLibrary.splice(index, 1);
+  clearBookList();
+  bookList();
 }
 
 
