@@ -19,12 +19,11 @@ function updateScreen() {
   bookList();
 }
 
-function Book(title, author, numberOfPages, haveRead, dataAttribute) {
+function Book(title, author, numberOfPages, haveRead) {
   this.title = title;
   this.author = author;
   this.numberOfPages = numberOfPages;
   this.haveRead = haveRead;
-  this.dataAttribute = dataAttribute;
 };
 
 
@@ -52,8 +51,7 @@ function submitBook(e) {
   const author = document.getElementById('author').value;
   const numberOfPages = document.getElementById('numberOfPages').value;
   const haveRead = document.querySelector('input[name="haveRead"]:checked').value;
-  const dataAttribute = myLibrary.length + 1;
-  const book = new Book(title, author, numberOfPages, haveRead, dataAttribute);
+  const book = new Book(title, author, numberOfPages, haveRead);
   if(title === '' || author === '' || numberOfPages === '') {
     alert('Please fill out form completely.');
     bookList();
@@ -68,7 +66,7 @@ function bookList() {
   const body = document.querySelector('.body');
   myLibrary.forEach((book) => {
     let readStatus = '';
-    book.haveRead === 'true' ? readStatus = 'Have Read.' : readStatus = "Have not read."
+    book.haveRead === 'true' ? readStatus = 'Have read.' : readStatus = "Have not read."
     const bookDiv = document.createElement('div');
     const bookTitle = document.createElement('h3');
     const bookAuthor = document.createElement('p');
@@ -98,14 +96,24 @@ function bookList() {
 };
 
 function toggleRead(e) {
-  const bookTitle = e.target.parentElement.children[0].textContent;
-  const bookAuthor = e.target.parentElement.children[1].textContent;
-  const bookLength = e.target.parentElement.children[2].textContent;
-  const readStatus = e.target.parentElement.children[3].textContent;
-  console.log(bookTitle);
-  console.log(bookAuthor);
-  console.log(bookLength);
-  console.log(readStatus);
+  clearBookList();
+  const title = e.target.parentElement.children[0].textContent;
+  const author = e.target.parentElement.children[1].textContent;
+  const numberOfPages = e.target.parentElement.children[2].textContent;
+  const specialProperty = e.target.parentElement.children[3].textContent;
+ 
+  specialPropertyStringified = specialProperty.toString();
+  let haveRead = '';
+  if (specialPropertyStringified === 'Have not read.') {
+    haveRead = 'Have read.';
+    console.log(haveRead);
+  } else if ( specialPropertyStringified === 'Have read.') {
+    haveRead = "Have not read.";
+  }
+  const newBook = new Book(title, author, numberOfPages, haveRead);
+  myLibrary.push(newBook);
+  bookList();
+  clearForm();
 }
 
 
