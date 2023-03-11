@@ -98,13 +98,14 @@ function bookList() {
 };
 
 function toggleRead(e) {
-  console.log(e.target.parentElement.children);
-  console.log(e.target.parentElement.children[0].textContent);
-  console.log(e.target.parentElement.children[1].textContent);
-  console.log(e.target.parentElement.children[2].textContent);
-  console.log(e.target.parentElement.children[3].textContent);
-  e.target.parentElement.children[3].textContent = 'success';
-  console.log(e.target.parentElement.children[3].textContent);
+  const bookTitle = e.target.parentElement.children[0].textContent;
+  const bookAuthor = e.target.parentElement.children[1].textContent;
+  const bookLength = e.target.parentElement.children[2].textContent;
+  const readStatus = e.target.parentElement.children[3].textContent;
+  console.log(bookTitle);
+  console.log(bookAuthor);
+  console.log(bookLength);
+  console.log(readStatus);
 }
 
 
