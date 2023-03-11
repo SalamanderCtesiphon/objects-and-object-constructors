@@ -12,6 +12,12 @@ const newBookButton = document.getElementById('newBookButton');
 newBookButton.addEventListener('click', bookForm);
 const form = document.querySelector('.form');
 form.style.display = "none";
+window.addEventListener('click', updateScreen);
+
+function updateScreen() {
+  clearBookList();
+  bookList();
+}
 
 function Book(title, author, numberOfPages, haveRead, dataAttribute) {
   this.title = title;
@@ -20,11 +26,7 @@ function Book(title, author, numberOfPages, haveRead, dataAttribute) {
   this.haveRead = haveRead;
   this.dataAttribute = dataAttribute;
   this.toggleRead = function() {
-    console.log(haveRead);
     haveRead = !haveRead;
-    console.log(haveRead);
-    clearBookList();
-    bookList();
   }
 };
 
@@ -66,15 +68,10 @@ function submitBook(e) {
 }
 
 function bookList() {
-  console.log('fire');
   const body = document.querySelector('.body');
-  myLibrary.map((book) => {
+  myLibrary.forEach((book) => {
     let readStatus = '';
-    if (book.haveRead === 'true') {
-      readStatus = "Have read." 
-    } else {
-      readStatus = "Have not read yet."
-    };
+    book.haveRead === 'true' ? readStatus = 'Have Read.' : readStatus = "Have not read."
     const bookDiv = document.createElement('div');
     const bookTitle = document.createElement('h3');
     const bookAuthor = document.createElement('p');
@@ -113,7 +110,6 @@ function deleteBook(e) {
 
 
 function clearBookList() {
-  console.log('fire2');
   const body = document.querySelector('.body');
   body.innerHTML = ``;
 }
