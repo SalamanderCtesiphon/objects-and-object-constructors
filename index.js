@@ -1,8 +1,17 @@
 let myLibrary = [];
 
-const hobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', 'true', 1);
-const neuromancer = new Book('Neuromancer', 'William Gibson', '271', 'false', 2);
-const bladeRunner = new Book('Do Androids Dream of Electric Sheep', 'Philip K. Dick', '230', 'true', 3);
+class Book {
+  constructor(title, author, numberOfPages, haveRead) {
+    this.title = title;
+    this.author = author;
+    this.numberOfPages = numberOfPages;
+    this.haveRead = haveRead;
+  }
+};
+
+const hobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', 'true');
+const neuromancer = new Book('Neuromancer', 'William Gibson', '271', 'false');
+const bladeRunner = new Book('Do Androids Dream of Electric Sheep', 'Philip K. Dick', '230', 'true');
 
 myLibrary.push(hobbit);
 myLibrary.push(neuromancer);
@@ -19,19 +28,8 @@ function updateScreen() {
   bookList();
 }
 
-function Book(title, author, numberOfPages, haveRead) {
-  this.title = title;
-  this.author = author;
-  this.numberOfPages = numberOfPages;
-  this.haveRead = haveRead;
-};
 
 
-function addBookToLibrary() {
-  const newBook = new Book();
-  myLibrary.push(newBook);
-  return myLibrary;
-};
 
 function bookForm() {
   form.style.display = 'block';
@@ -96,21 +94,20 @@ function bookList() {
 };
 
 function toggleRead(e) {
+  e.preventDefault();
   clearBookList();
   const title = e.target.parentElement.children[0].textContent;
   const author = e.target.parentElement.children[1].textContent;
   const numberOfPages = e.target.parentElement.children[2].textContent;
-  const specialProperty = e.target.parentElement.children[3].textContent;
- 
-  specialPropertyStringified = specialProperty.toString();
-  let haveRead = '';
-  if (specialPropertyStringified === 'Have not read.') {
-    haveRead = 'Have read.';
-    console.log(haveRead);
-  } else if ( specialPropertyStringified === 'Have read.') {
-    haveRead = "Have not read.";
+  const haveRead = e.target.parentElement.children[3].textContent;
+  let readingStatus = '';
+  if (haveRead === 'Have not read.') {
+    readingStatus = 'Have read.';
+    console.log(readingStatus);
+  } else if ( haveRead === 'Have read.') {
+    readingStatus = "Have not read.";
   }
-  const newBook = new Book(title, author, numberOfPages, haveRead);
+  const newBook = new Book(title, author, numberOfPages, readingStatus);
   myLibrary.push(newBook);
   bookList();
   clearForm();
