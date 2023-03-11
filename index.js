@@ -103,7 +103,8 @@ function toggleRead(e) {
   console.log(e.target.parentElement.children[1].textContent);
   console.log(e.target.parentElement.children[2].textContent);
   console.log(e.target.parentElement.children[3].textContent);
-
+  e.target.parentElement.children[3].textContent = 'success';
+  console.log(e.target.parentElement.children[3].textContent);
 }
 
 
