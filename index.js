@@ -102,10 +102,10 @@ function toggleRead(e) {
   const haveRead = e.target.parentElement.children[3].textContent;
   let readingStatus = '';
   if (haveRead === 'Have not read.') {
-    readingStatus = 'Have read.';
+    readingStatus = 'true';
     console.log(readingStatus);
   } else if ( haveRead === 'Have read.') {
-    readingStatus = "Have not read.";
+    readingStatus = "false";
   }
   const newBook = new Book(title, author, numberOfPages, readingStatus);
   myLibrary.push(newBook);
