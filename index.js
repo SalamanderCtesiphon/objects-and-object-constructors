@@ -25,7 +25,6 @@ function Book(title, author, numberOfPages, haveRead, dataAttribute) {
   this.numberOfPages = numberOfPages;
   this.haveRead = haveRead;
   this.dataAttribute = dataAttribute;
-  this.toggleRead = () => haveRead = !haveRead
 };
 
 
@@ -68,7 +67,6 @@ function submitBook(e) {
 function bookList() {
   const body = document.querySelector('.body');
   myLibrary.forEach((book) => {
-    console.log(book.haveRead);
     let readStatus = '';
     book.haveRead === 'true' ? readStatus = 'Have Read.' : readStatus = "Have not read."
     const bookDiv = document.createElement('div');
@@ -95,9 +93,13 @@ function bookList() {
     bookDiv.appendChild(deleteButton)
     body.appendChild(bookDiv);
     deleteButton.addEventListener('click', deleteBook);
-    readStatusDisplay.addEventListener('click', book.toggleRead);
+    readStatusDisplay.addEventListener('click', toggleRead);
   });
 };
+
+function toggleRead(e) {
+}
+
 
 function deleteBook(e) {
   const book = e.target.parentElement;
