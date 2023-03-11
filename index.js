@@ -98,6 +98,7 @@ function bookList() {
 };
 
 function toggleRead(e) {
+  console.log(this.parentElement);
 }
 
 
