@@ -103,7 +103,6 @@ function toggleRead(e) {
   let readingStatus = '';
   if (haveRead === 'Have not read.') {
     readingStatus = 'true';
-    console.log(readingStatus);
   } else if ( haveRead === 'Have read.') {
     readingStatus = "false";
   }
