@@ -1,7 +1,7 @@
 let myLibrary = [];
 
 const hobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', 'true', 1);
-const neuromancer = new Book('Neuromancer', 'William Gibson', '271', 'true', 2);
+const neuromancer = new Book('Neuromancer', 'William Gibson', '271', 'false', 2);
 const bladeRunner = new Book('Do Androids Dream of Electric Sheep', 'Philip K. Dick', '230', 'true', 3);
 
 myLibrary.push(hobbit);
@@ -25,9 +25,7 @@ function Book(title, author, numberOfPages, haveRead, dataAttribute) {
   this.numberOfPages = numberOfPages;
   this.haveRead = haveRead;
   this.dataAttribute = dataAttribute;
-  this.toggleRead = function() {
-    haveRead = !haveRead;
-  }
+  this.toggleRead = () => haveRead = !haveRead
 };
 
 
@@ -70,6 +68,7 @@ function submitBook(e) {
 function bookList() {
   const body = document.querySelector('.body');
   myLibrary.forEach((book) => {
+    console.log(book.haveRead);
     let readStatus = '';
     book.haveRead === 'true' ? readStatus = 'Have Read.' : readStatus = "Have not read."
     const bookDiv = document.createElement('div');
