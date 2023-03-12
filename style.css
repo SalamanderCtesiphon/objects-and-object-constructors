@@ -8,26 +8,33 @@
 .page{
   height: 100vh;
   width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
 }
 
 
 .header {
+  grid-column-start: 1;
+  grid-column-end: 21;
+  grid-row-start: 1;
+  grid-row-end: 3;
   background-color: rgba(0, 0, 0, 0.271);
-  height: 10vh;
+  height: auto;
   width: 100vw;
   display: flex;
   padding: 1vw;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4vh;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
-p {
-  margin: 4vh;
-}
 
 .body {
+  grid-column-start: 1;
+  grid-column-end: 18;
+  grid-row-start: 5;
+  grid-row-end: 18;
   display: flex;
   margin: 1vw;
   height: 50vh;
@@ -39,8 +46,8 @@ p {
   height: 20vw;
   border: 2px solid black;
   border-radius: 4vh;
-  margin: 2vh;
-  padding: 2vh;
+  margin: .5vh;
+  padding: .5vh;
   display: flex;
   flex-direction: column;
 }
@@ -75,5 +82,25 @@ p {
 }
 
 .right-side-bar {
+  grid-column-start: 17;
+  grid-column-end: 20;
+  grid-row-start: 3;
+  grid-row-end: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  height: auto;
+  width: 20vw;
+}
+
+.footer {
+  grid-column-start: 1;
+  grid-column-end: 21;
+  grid-row-start: 20;
+  grid-row-end: 21;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid black;
 }
