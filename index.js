@@ -22,6 +22,8 @@ const newBookButton = document.getElementById('newBookButton');
 newBookButton.addEventListener('click', bookForm);
 const form = document.querySelector('.form');
 form.style.display = "none";
+const cancelButton = document.getElementById('cancel');
+cancelButton.addEventListener('click', clearForm);
 
 function bookForm() {
   form.style.display = 'block';

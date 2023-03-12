@@ -70,3 +70,8 @@ p {
 #newBookButton {
   padding: .75vh;
 }
+
+.button-line {
+  display: flex;
+  justify-content: space-between;
+}
