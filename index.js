@@ -41,7 +41,9 @@ function submitBook(e) {
   clearBookList();
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
-  const numberOfPages = document.getElementById('numberOfPages').value;
+  const placeHolderONe = document.getElementById('numberOfPages').value;
+  const placeHolderTwo = placeHolderONe.toString();
+  const numberOfPages = placeHolderTwo.toLocaleString('en-US');
   const haveRead = document.querySelector('input[name="haveRead"]:checked').value;
   const book = new Book(title, author, numberOfPages, haveRead);
   if(title === '' || author === '' || numberOfPages === '') {
@@ -73,7 +75,9 @@ function bookList() {
     readStatusDisplay.setAttribute('class', 'readStatusDisplay');
     bookTitle.textContent = `${book.title}`;
     bookAuthor.textContent = `Author: ${book.author}`;
-    bookLength.textContent = `Length: ${book.numberOfPages} pgs.`;
+    const tempNumber = book.numberOfPages;
+    const pageNumbers = new Intl.NumberFormat().format(tempNumber);
+    bookLength.textContent = `Length: ${pageNumbers} pgs.`;
     readStatusDisplay.textContent = `${readStatus}`;
     deleteButton.textContent = 'Delete';
     bookDiv.appendChild(bookTitle);
