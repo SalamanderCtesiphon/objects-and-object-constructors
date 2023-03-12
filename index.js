@@ -95,9 +95,7 @@ function bookList() {
 
 function toggleRead(e) {
   e.preventDefault();
-  clearBookList();
   const book = e.target.parentElement;
-  console.log(book.parentElement);
   const index = Array.from(book.parentElement.children).indexOf(book);
   const title = e.target.parentElement.children[0].textContent;
   const authorPLaceholder = e.target.parentElement.children[1].textContent.toString();
@@ -114,8 +112,8 @@ function toggleRead(e) {
   }
   const newBook = new Book(title, author, numberOfPages, readingStatus);
   myLibrary.splice(index, 1, newBook);
+  clearBookList();
   bookList();
-  clearForm();
 }
 
 
