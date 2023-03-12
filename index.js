@@ -105,11 +105,7 @@ function toggleRead(e) {
   const numberOfPages = numberOfPagesSecondPlaceholder.slice(-100, -5);
   const haveRead = e.target.parentElement.children[3].textContent;
   let readingStatus = '';
-  if (haveRead === 'Have not read.') {
-    readingStatus = 'true';
-  } else if ( haveRead === 'Have read.') {
-    readingStatus = "false";
-  }
+  haveRead === 'Have not read.' ? readingStatus = 'true' : readingStatus = "false"
   const newBook = new Book(title, author, numberOfPages, readingStatus);
   myLibrary.splice(index, 1, newBook);
   clearBookList();
