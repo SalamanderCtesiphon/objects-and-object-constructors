@@ -28,9 +28,6 @@ function updateScreen() {
   bookList();
 }
 
-
-
-
 function bookForm() {
   form.style.display = 'block';
   newBookButton.style.display = 'none';
@@ -112,7 +109,6 @@ function toggleRead(e) {
   bookList();
 }
 
-
 function deleteBook(e) {
   const book = e.target.parentElement;
   const index = Array.from(book.parentElement.children).indexOf(book);
@@ -120,7 +116,6 @@ function deleteBook(e) {
   clearBookList();
   bookList();
 }
-
 
 function clearBookList() {
   const body = document.querySelector('.body');
