@@ -17,16 +17,11 @@ myLibrary.push(hobbit);
 myLibrary.push(neuromancer);
 myLibrary.push(bladeRunner);
 
+
 const newBookButton = document.getElementById('newBookButton');
 newBookButton.addEventListener('click', bookForm);
 const form = document.querySelector('.form');
 form.style.display = "none";
-window.addEventListener('click', updateScreen);
-
-function updateScreen() {
-  clearBookList();
-  bookList();
-}
 
 function bookForm() {
   form.style.display = 'block';
