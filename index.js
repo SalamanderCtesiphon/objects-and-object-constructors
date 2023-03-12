@@ -41,9 +41,7 @@ function submitBook(e) {
   clearBookList();
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
-  const placeHolderONe = document.getElementById('numberOfPages').value;
-  const placeHolderTwo = placeHolderONe.toString();
-  const numberOfPages = placeHolderTwo.toLocaleString('en-US');
+  const numberOfPages = document.getElementById('numberOfPages').value;
   const haveRead = document.querySelector('input[name="haveRead"]:checked').value;
   const book = new Book(title, author, numberOfPages, haveRead);
   if(title === '' || author === '' || numberOfPages === '') {
@@ -99,7 +97,8 @@ function toggleRead(e) {
   const authorPLaceholder = e.target.parentElement.children[1].textContent.toString();
   const author = authorPLaceholder.slice(7);
   const numberOfPagesPlaceholder = e.target.parentElement.children[2].textContent.toString();
-  const numberOfPagesSecondPlaceholder = numberOfPagesPlaceholder.slice(8);
+  const commaEscapedNumberOfPageg = numberOfPagesPlaceholder.replace(/,/g, "");
+  const numberOfPagesSecondPlaceholder = commaEscapedNumberOfPageg.slice(8);
   const numberOfPages = numberOfPagesSecondPlaceholder.slice(-100, -5);
   const haveRead = e.target.parentElement.children[3].textContent;
   let readingStatus = '';
