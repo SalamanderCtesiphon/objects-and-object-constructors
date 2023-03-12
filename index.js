@@ -101,8 +101,8 @@ function toggleRead(e) {
   const authorPLaceholder = e.target.parentElement.children[1].textContent.toString();
   const author = authorPLaceholder.slice(7);
   const numberOfPagesPlaceholder = e.target.parentElement.children[2].textContent.toString();
-  const numberOfPagesSecondPlaceholder = numberOfPagesPlaceholder.slice(6)
-  const numberOfPages = numberOfPagesSecondPlaceholder.slice(-9, -4);
+  const numberOfPagesSecondPlaceholder = numberOfPagesPlaceholder.slice(8);
+  const numberOfPages = numberOfPagesSecondPlaceholder.slice(-100, -5);
   const haveRead = e.target.parentElement.children[3].textContent;
   let readingStatus = '';
   if (haveRead === 'Have not read.') {
