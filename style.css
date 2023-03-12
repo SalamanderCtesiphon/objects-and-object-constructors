@@ -6,23 +6,21 @@
 }
 
 .page{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10vh;
+  height: 100vh;
   width: 100vw;
 }
 
-h1 {
+
+.header {
   background-color: rgba(0, 0, 0, 0.271);
   height: 10vh;
   width: 100vw;
   display: flex;
+  padding: 1vw;
   align-items: center;
   justify-content: center;
   margin-bottom: 4vh;
-  margin-top: 4vh;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 p {
@@ -74,4 +72,8 @@ p {
 .button-line {
   display: flex;
   justify-content: space-between;
+}
+
+.right-side-bar {
+  border: 1px solid black;
 }
