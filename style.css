@@ -3,6 +3,7 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: 'Libre Franklin', sans-serif;
+  color: #fff;
 }
 
 .page{
@@ -19,7 +20,8 @@
   grid-column-end: 21;
   grid-row-start: 1;
   grid-row-end: 3;
-  background-color: rgba(0, 0, 0, 0.271);
+  background-image: linear-gradient(to bottom right, #443C68, #635985);
+  color: #fff;
   height: auto;
   width: 100vw;
   display: flex;
@@ -31,22 +33,27 @@
 
 
 .body {
+  background-image: linear-gradient(to bottom right, #37306B, #393053);
   grid-column-start: 1;
-  grid-column-end: 18;
-  grid-row-start: 5;
+  grid-column-end: 17;
+  grid-row-start: 3;
   grid-row-end: 18;
-  display: flex;
-  margin: 1vw;
-  height: 50vh;
-  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  height: 85vh;
+  width: auto;
+  color: #fff;
+  padding: 1vh;
 }
 
 .book {
-  width: 15vw;
-  height: 10vw;
-  border: 2px solid black;
+  width: 14vw;
+  height: 11vw;
+  border: 2px solid #fff;
   border-radius: 1vh;
-  margin: .5vh;
+  margin: 1vh;
   padding: .5vh;
   display: flex;
   flex-direction: column;
@@ -82,6 +89,25 @@
   justify-content: space-between;
 }
 
+button {
+  background-color: #18122B;
+  border-radius: .75rem;
+  padding: 5px;
+  width: 9vw;
+  margin: .5em;
+}
+
+#submit, #cancel {
+  background-color: #18122B;
+  color: #fff;
+  border-radius: .75rem;
+  padding: 5px;
+  width: 6vw;
+  height: auto;
+}
+input {
+  color: black;
+}
 .right-side-bar {
   grid-column-start: 17;
   grid-column-end: 20;
@@ -90,7 +116,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
+  background-color: #37306B;
   height: auto;
   width: 20vw;
 }
@@ -103,5 +129,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  background-color: #18122B;
 }
