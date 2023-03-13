@@ -59,7 +59,7 @@ function bookList() {
     const bookTitle = document.createElement('h3');
     const bookAuthor = document.createElement('p');
     const bookLength = document.createElement('p');
-    const deleteButton = document.createElement('button');
+    const deleteButton = document.createElement('div');
     const readStatusDisplay = document.createElement('button');
     bookDiv.classList.add('book');
     bookTitle.setAttribute('class', 'bookTitle');
@@ -73,7 +73,7 @@ function bookList() {
     const pageNumbers = new Intl.NumberFormat().format(tempNumber);
     bookLength.textContent = `Length: ${pageNumbers} pgs.`;
     readStatusDisplay.textContent = `${readStatus}`;
-    deleteButton.textContent = 'Delete';
+    deleteButton.innerHTML = `<img src="icons/icons8-trash.svg">`;
     bookDiv.appendChild(bookTitle);
     bookDiv.appendChild(bookAuthor);
     bookDiv.appendChild(bookLength);

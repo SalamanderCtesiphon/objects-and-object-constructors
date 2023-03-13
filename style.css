@@ -3,7 +3,7 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: 'Libre Franklin', sans-serif;
-  color: #ffffffc9;
+  color: #ffffffaf;
 }
 
 .page{
@@ -48,6 +48,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   overflow-y: scroll;
+  overflow-x: hidden;
   height: 85vh;
   width: auto;
   color: #ffffff68;
@@ -112,6 +113,16 @@ button {
   height: auto;
   cursor: pointer;
 }
+
+.deleteButton {
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  left: 12vw;
+  top: -10.5vh;
+  cursor: pointer;
+}
+
 input {
   background-color: #18122B;
 }
@@ -141,7 +152,7 @@ input {
 
  /* Dropdown Button */
  .dropbtn {
-  color: white;
+  color: rgba(255, 255, 255, 0.317);
   padding: 16px;
   font-size: 16px;
   border-radius: 10vh;
@@ -163,7 +174,7 @@ input {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #dddddd9d;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -180,7 +191,7 @@ input {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #dddddd19;
   color: black;
 }
 
