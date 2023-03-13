@@ -73,14 +73,15 @@ function bookList() {
     const pageNumbers = new Intl.NumberFormat().format(tempNumber);
     bookLength.textContent = `Length: ${pageNumbers} pgs.`;
     readStatusDisplay.textContent = `${readStatus}`;
-    deleteButton.innerHTML = `<img src="icons/icons8-trash.svg">`;
+    deleteButton.innerHTML = `<img id="trash-can" src="icons/icons8-trash.svg">`;
     bookDiv.appendChild(bookTitle);
     bookDiv.appendChild(bookAuthor);
     bookDiv.appendChild(bookLength);
     bookDiv.appendChild(readStatusDisplay);
     bookDiv.appendChild(deleteButton)
     body.appendChild(bookDiv);
-    deleteButton.addEventListener('click', deleteBook);
+    const trashCan = document.getElementById("trash-can");
+    trashCan.addEventListener('click', deleteBook);
     readStatusDisplay.addEventListener('click', toggleRead);
   });
 };
