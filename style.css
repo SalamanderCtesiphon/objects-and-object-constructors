@@ -46,7 +46,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-
+  overflow-y: scroll;
   height: 85vh;
   width: auto;
   color: #ffffff68;
@@ -116,16 +116,16 @@ input {
   background-color: #18122B;
 }
 .right-side-bar {
-  grid-column-start: 15;
+  grid-column-start: 16;
   grid-column-end: 20;
   grid-row-start: 3;
   grid-row-end: 20;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: #37306b69;
+  background-color: #37306b38;
   height: auto;
-  width: 40vw;
+  width: 25vw;
 }
 
 .footer {
