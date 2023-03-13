@@ -28,10 +28,6 @@ cancelButton.addEventListener('click', clearForm);
 function bookForm() {
   form.style.display = 'block';
   newBookButton.style.display = 'none';
-  const inputField = document.querySelector('.input-field');
-  form.classList.add('form');
-  form.setAttribute('id', 'form');
-  inputField.appendChild(form);
   const submit = document.getElementById('submit');
   submit.addEventListener('click', submitBook);
 }; 
@@ -90,7 +86,6 @@ function bookList() {
 };
 
 function toggleRead(e) {
-  e.preventDefault();
   const book = e.target.parentElement;
   const index = Array.from(book.parentElement.children).indexOf(book);
   const title = e.target.parentElement.children[0].textContent;
