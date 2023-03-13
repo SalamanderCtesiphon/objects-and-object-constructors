@@ -75,7 +75,7 @@ function bookList() {
     const pageNumbers = new Intl.NumberFormat().format(tempNumber);
     bookLength.textContent = `Length: ${pageNumbers} pgs.`;
     readStatusDisplay.textContent = `${readStatus}`;
-    deleteButton.innerHTML = `<a><img src="icons/icons8-trash.svg"></a>`;
+    deleteButton.innerHTML = `<a><img src="icons/x(1).svg"></a>`;
     bookDiv.appendChild(bookTitle);
     bookDiv.appendChild(bookAuthor);
     bookDiv.appendChild(bookLength);
