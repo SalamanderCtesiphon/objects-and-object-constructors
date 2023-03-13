@@ -1,3 +1,5 @@
+document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+
 let myLibrary = [];
 
 class Book {
@@ -80,7 +82,7 @@ function bookList() {
     bookDiv.appendChild(readStatusDisplay);
     bookDiv.appendChild(deleteButton)
     body.appendChild(bookDiv);
-    deleteButton.parentElement.addEventListener('click', deleteBook);
+    deleteButton.addEventListener('click', deleteBook);
     readStatusDisplay.addEventListener('click', toggleRead);
   });
 };
@@ -150,4 +152,3 @@ window.onclick = function(event) {
   }
 } 
 
-document.getElementById("currentYear").innerHTML = new Date().getFullYear();
