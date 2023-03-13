@@ -9,6 +9,7 @@
 .page{
   height: 100vh;
   width: 100vw;
+  background-color: #393053;
   display: grid;
   grid-template-columns: repeat(20, 1fr);
   grid-template-rows: repeat(20, 1fr);
@@ -39,12 +40,12 @@
 
 .body {
   background-image: linear-gradient(to bottom right, #37306B, #393053);
-  grid-column-start: 1;
-  grid-column-end: 17;
+  grid-column-start: 4;
+  grid-column-end: 15;
   grid-row-start: 3;
   grid-row-end: 18;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
 
   height: 85vh;
@@ -115,7 +116,7 @@ input {
   background-color: #18122B;
 }
 .right-side-bar {
-  grid-column-start: 17;
+  grid-column-start: 15;
   grid-column-end: 20;
   grid-row-start: 3;
   grid-row-end: 20;
