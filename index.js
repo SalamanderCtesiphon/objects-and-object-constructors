@@ -149,3 +149,5 @@ window.onclick = function(event) {
     }
   }
 } 
+
+document.getElementById("currentYear").innerHTML = new Date().getFullYear();

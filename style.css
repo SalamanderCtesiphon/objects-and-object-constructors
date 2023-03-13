@@ -150,6 +150,11 @@ input {
   background-color: #18122B;
 }
 
+.footer-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
  /* Dropdown Button */
  .dropbtn {
   color: rgba(255, 255, 255, 0.317);
