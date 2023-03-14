@@ -132,6 +132,9 @@ function clearForm() {
 
 bookList();
 
+const menubtn = document.querySelector('.dropbtn');
+menubtn.addEventListener('click', myFunction);
+
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
