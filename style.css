@@ -97,12 +97,15 @@
 
 .input-field {
   width: 20vw;
-  margin-top: 4vh;
-  height: auto;
+  margin-top: 10vh;
+  height: 20vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
+
+
 
 #form {
   display: flex;
@@ -121,13 +124,14 @@
 
 .button-line {
   display: flex;
+  align-items: first baseline;
   justify-content: space-between;
 }
 
 button {
   background-color: #18122B;
   border-radius: .75rem;
-  width: 9vw;
+  width: 8vw;
   margin: .5em;
   cursor: pointer;
 }
@@ -136,9 +140,9 @@ button {
   background-color: #18122B;
   color: #fff;
   border-radius: .75rem;
-  padding: 5px;
+  padding: 4px;
   width: 6vw;
-  height: auto;
+  height: 6vh;
   cursor: pointer;
 }
 
