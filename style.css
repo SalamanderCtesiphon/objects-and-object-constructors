@@ -67,10 +67,27 @@
   margin: 1vh;
   padding: 1vh;
   background-image: linear-gradient(320deg, #66347F, #3a072b);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.bookAuthor {
+  grid-row-start: 2;
+}
+
+.bookLength {
+  grid-row-start: 3;
 }
 
 .deleteButton {
   cursor: pointer;
+  grid-row-start: 1;
+  grid-column-start: 4;
+}
+
+.readStatusDisplay {
+  grid-row-start: 5;
 }
 
 .bookTitle, .bookAuthor, .bookLength {
