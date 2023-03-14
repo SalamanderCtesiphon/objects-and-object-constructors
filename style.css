@@ -68,26 +68,26 @@
   padding: 1vh;
   background-image: linear-gradient(320deg, #66347F, #3a072b);
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
 }
 
 .bookAuthor {
-  grid-row-start: 2;
+  grid-row-start: 3;
 }
 
 .bookLength {
-  grid-row-start: 3;
+  grid-row-start: 5;
 }
 
 .deleteButton {
   cursor: pointer;
   grid-row-start: 1;
-  grid-column-start: 4;
+  grid-column-start: 7;
 }
 
 .readStatusDisplay {
-  grid-row-start: 5;
+  grid-row-start: 7;
 }
 
 .bookTitle, .bookAuthor, .bookLength {
