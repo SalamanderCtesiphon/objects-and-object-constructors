@@ -134,7 +134,7 @@ bookList();
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-function myFunction() {
+function myFunction(e) {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
@@ -152,3 +152,5 @@ window.onclick = function(event) {
   }
 } 
 
+const menuBtn = document.querySelector('.dropbtn');
+menuBtn.addEventListener('click', myFunction);
